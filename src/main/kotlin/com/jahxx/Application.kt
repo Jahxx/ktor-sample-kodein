@@ -13,6 +13,7 @@ import kotlinx.html.*
 import org.kodein.di.*
 import org.kodein.type.jvmType
 
+
 fun main() {
     embeddedServer(Netty, 8080) {
         kodeinApplication { application ->
@@ -42,10 +43,10 @@ object Users {
                 }
             }
 
-            get<Routes.User> { user ->
+            get<Routes.User> {
                 call.respondHtml {
                     body {
-                        h1 { +user.name }
+                        h1 { +it.name }
                     }
                 }
             }
@@ -76,6 +77,7 @@ fun Application.kodeinApplication(
     val application = this
 
     application.install(Resources)
+    application.install(DefaultHeaders)
 
     val kodein = DI {
         bind<Application>() with instance(application)

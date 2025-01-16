@@ -1,42 +1,13 @@
-# ktor-sample-kodein
+# Ktor + Kodein Example
 
-This project was created using the [Ktor Project Generator](https://start.ktor.io).
+Este proyecto es una aplicación server-side creada con [Ktor](https://ktor.io/) y [Kodein](https://kodein.org/), diseñada para demostrar el uso de controladores basados en Inyeción de dependencias (DI)
 
-Here are some useful links to get you started:
+## Características
+- **Ktor**: Framework para crear servidores rápidos y escalables en Kotlin. 
+- **Kodein**: Proveedor de inyección de dependencias para manejar controladores y repositorios.
+- **Rutas con Resources**: Organización de rutas usando anotacione `@Resource`.
+- **HTML Dinámico**: Respuestas HTML generadas dínamicamente.
 
-- [Ktor Documentation](https://ktor.io/docs/home.html)
-- [Ktor GitHub page](https://github.com/ktorio/ktor)
-- The [Ktor Slack chat](https://app.slack.com/client/T09229ZC6/C0A974TJ9). You'll need
-  to [request an invite](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up) to join.
-
-## Features
-
-Here's a list of features included in this project:
-
-| Name                                                       | Description                                     |
-|------------------------------------------------------------|-------------------------------------------------|
-| [Default Headers](https://start.ktor.io/p/default-headers) | Adds a default set of headers to HTTP responses |
-| [Routing](https://start.ktor.io/p/routing)                 | Provides a structured routing DSL               |
-| [Resources](https://start.ktor.io/p/resources)             | Provides type-safe routing                      |
-
-## Building & Running
-
-To build or run the project, use one of the following tasks:
-
-| Task                          | Description                                                          |
-|-------------------------------|----------------------------------------------------------------------|
-| `./gradlew test`              | Run the tests                                                        |
-| `./gradlew build`             | Build everything                                                     |
-| `buildFatJar`                 | Build an executable JAR of the server with all dependencies included |
-| `buildImage`                  | Build the docker image to use with the fat JAR                       |
-| `publishImageToLocalRegistry` | Publish the docker image locally                                     |
-| `run`                         | Run the server                                                       |
-| `runDocker`                   | Run using the local docker image                                     |
-
-If the server starts successfully, you'll see the following output:
-
-```
-2024-12-04 14:32:45.584 [main] INFO  Application - Application started in 0.303 seconds.
-2024-12-04 14:32:45.682 [main] INFO  Application - Responding at http://0.0.0.0:8080
-```
-
+## Endpoints
+1. **`GET /users`**: Lista de usuarios con enlaces a sus perfiles.
+2. **`Get /users/{name}`**: Muestra información detallada de un usuario por nombre. 
